@@ -31,7 +31,7 @@ namespace stackexample
 
         public bool IsEmpty()
         {
-            throw new NotImplementedException();
+            return Height() == 0;
         }
 
         public void Pop()
