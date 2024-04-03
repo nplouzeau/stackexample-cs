@@ -17,6 +17,5 @@ public class Tests
     public void EmptyAtCreation()
     {
         Assert.That(stack.Height(), Is.EqualTo(0));
-        Assert.Pass();
     }
 }

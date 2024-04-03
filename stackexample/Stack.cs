@@ -11,6 +11,7 @@ namespace stackexample
 		public Stack(int capacity)
 		{
             values = new T[capacity];
+            top = -1;
 		}
 
         public int Capacity()
@@ -26,6 +27,11 @@ namespace stackexample
         public int Height()
         {
             return top + 1;
+        }
+
+        public bool IsEmpty()
+        {
+            throw new NotImplementedException();
         }
 
         public void Pop()
