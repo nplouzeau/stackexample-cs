@@ -41,7 +41,8 @@ namespace stackexample
 
         public void Push(T value)
         {
-            throw new NotImplementedException();
+            top++;
+            values[top] = value;
         }
 
         public T Top()
