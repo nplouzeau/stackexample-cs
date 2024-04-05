@@ -1,18 +1,16 @@
-﻿using System;
-namespace stackexample
+﻿namespace stackexample
 {
-	public class Stack<T> : IStack<T>
-	{
-        private T[] values;
+    public class Stack<T> : IStack<T>
+    {
+        private readonly T[] values;
 
         private int top;
 
-
-		public Stack(int capacity)
-		{
+        public Stack(int capacity)
+        {
             values = new T[capacity];
             top = -1;
-		}
+        }
 
         public int Capacity()
         {
@@ -47,7 +45,13 @@ namespace stackexample
 
         public T Top()
         {
-            throw new NotImplementedException();
+            if (top >= 0)
+            {
+                return values[top];
+            }
+            else {
+                return default;
+            }
         }
     }
 }
