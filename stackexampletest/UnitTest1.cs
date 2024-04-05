@@ -6,7 +6,7 @@ namespace stackexampletest;
 public class Tests
 {
     IStack<double> stack;
-    readonly int capacity = 20;
+    readonly int capacity = 3;
 
     /// <summary>
     /// Creates a new, clean and empy stack for each test case below.
@@ -27,6 +27,7 @@ public class Tests
     [Test]
     public void CheckCapacity()
     {
+        Assume.That(capacity, Is.GreaterThanOrEqualTo(1));
         Assert.That(stack.Capacity(), Is.EqualTo(capacity));
     }
     

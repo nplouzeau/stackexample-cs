@@ -34,7 +34,10 @@
 
         public void Pop()
         {
-            throw new NotImplementedException();
+            if (top >= 0)
+            {
+                top--;
+            }
         }
 
         public void Push(T value)
@@ -49,7 +52,8 @@
             {
                 return values[top];
             }
-            else {
+            else
+            {
                 return default;
             }
         }
