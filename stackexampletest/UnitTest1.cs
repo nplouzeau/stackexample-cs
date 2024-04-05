@@ -2,13 +2,14 @@
 
 namespace stackexampletest;
 
+[TestFixture]
 public class Tests
 {
     IStack<double> stack;
-    int capacity = 20;
+    readonly int capacity = 20;
 
     /// <summary>
-    /// Creates a new, clen and empy stack for each test case below.
+    /// Creates a new, clean and empy stack for each test case below.
     /// </summary>
     [SetUp]
     public void Setup()
@@ -23,6 +24,12 @@ public class Tests
         Assert.That(stack.IsEmpty());
     }
 
+    [Test]
+    public void CheckCapacity()
+    {
+        Assert.That(stack.Capacity(), Is.EqualTo(capacity));
+    }
+    
     [Test]
     public void PushOneValue()
     {
