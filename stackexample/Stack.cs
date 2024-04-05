@@ -32,6 +32,11 @@
             return Height() == 0;
         }
 
+        public bool IsFull()
+        {
+            return top == Capacity();
+        }
+
         public void Pop()
         {
             if (top >= 0)
