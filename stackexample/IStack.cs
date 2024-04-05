@@ -9,7 +9,7 @@
         /// <summary>
         /// Indicates if the stack contains values.
         /// </summary>
-        /// <returns>true iff there are values inside</returns>
+        /// <returns>true if and only if there are values in the stack</returns>
         bool IsEmpty();
 
         /// <summary>
@@ -46,6 +46,12 @@
         /// </summary>
         /// <returns>the capacity of the stack</returns>
         int Capacity();
+
+        /// <summary>
+        /// Indicates if the stack cannot accept more values
+        /// </summary>
+        /// <returns>true if and only if there is no space left in the stack</returns>
+        bool IsFull();
     }
 }
 
