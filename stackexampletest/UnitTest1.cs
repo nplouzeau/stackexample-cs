@@ -30,7 +30,7 @@ public class Tests
         Assume.That(capacity, Is.GreaterThanOrEqualTo(1));
         Assert.That(stack.Capacity(), Is.EqualTo(capacity));
     }
-    
+
     [Test]
     public void PushOneValue()
     {
@@ -44,5 +44,15 @@ public class Tests
         stack.Push(10.0);
         stack.Pop();
         Assert.That(stack.Height(), Is.EqualTo(0));
+    }
+
+    [Test]
+    public void PushTwoValuesCheckTopThenOnePop()
+    {
+        stack.Push(1.0);
+        stack.Push(2.0);
+        Assert.That(stack.Top(), Is.EqualTo(2.0));
+        stack.Pop();
+        Assert.That(stack.Top(), Is.EqualTo(1.0));
     }
 }
