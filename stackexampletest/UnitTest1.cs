@@ -55,4 +55,14 @@ public class Tests
         stack.Pop();
         Assert.That(stack.Top(), Is.EqualTo(1.0));
     }
+
+    [Test]
+    public void PushBeyondCapacity()
+    {
+        for (int i = 0; i <= capacity; i++)
+        {
+            stack.Push(i);
+        }
+        Assert.Pass();
+    }
 }
