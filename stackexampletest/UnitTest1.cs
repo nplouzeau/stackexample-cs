@@ -59,10 +59,12 @@ public class Tests
     [Test]
     public void PushBeyondCapacity()
     {
-        for (int i = 0; i <= capacity; i++)
+        Assert.That(() =>
         {
-            stack.Push(i);
-        }
-        Assert.Pass();
+            for (int i = 0; i <= capacity; i++)
+            {
+                stack.Push(i);
+            }
+        }, Throws.TypeOf<CapacityExceededException>());        
     }
 }
