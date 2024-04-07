@@ -36,7 +36,7 @@ namespace stackexample
 
         public bool IsFull()
         {
-            return top == Capacity();
+            return top == Capacity() - 1;
         }
 
         public void Pop()
