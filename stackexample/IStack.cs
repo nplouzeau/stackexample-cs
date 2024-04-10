@@ -1,4 +1,6 @@
-﻿namespace stackexample
+﻿using System.Runtime.Serialization;
+
+namespace stackexample
 {
     /// <summary>
     /// A simple definition of a classical stack structure.
@@ -9,7 +11,7 @@
         /// <summary>
         /// Indicates if the stack contains values.
         /// </summary>
-        /// <returns>true if and only if there are values in the stack</returns>
+        /// <returns>true if and only if there are no values in the stack</returns>
         bool IsEmpty();
 
         /// <summary>
@@ -31,9 +33,12 @@
         void Pop();
 
         /// <summary>
-        /// Adds a new value as the new top of the stack.
+        /// Adds a new value as the new top of the stack, if the stack is not full.
         /// </summary>
         /// <param name="value">the value to be add</param>
+        /// <exception cref="CapacityExceededException">Throw CapacityExceedException
+        /// if the stack is full: IsFull() returns true
+        /// </exception>
         void Push(T value);
 
         /// <summary>
@@ -52,6 +57,45 @@
         /// </summary>
         /// <returns>true if and only if there is no space left in the stack</returns>
         bool IsFull();
+    }
+    [Serializable]
+    public class CapacityExceededException : Exception
+    {
+        public CapacityExceededException()
+        {
+        }
+
+        public CapacityExceededException(string? message) : base(message)
+        {
+        }
+
+        public CapacityExceededException(string? message, Exception? innerException) : base(message, innerException)
+        {
+        }
+
+        protected CapacityExceededException(SerializationInfo info, StreamingContext context) : base(info, context)
+        {
+        }
+    }
+
+    [Serializable]
+    public class EmptyStackException : Exception
+    {
+        public EmptyStackException()
+        {
+        }
+
+        public EmptyStackException(string? message) : base(message)
+        {
+        }
+
+        public EmptyStackException(string? message, Exception? innerException) : base(message, innerException)
+        {
+        }
+
+        protected EmptyStackException(SerializationInfo info, StreamingContext context) : base(info, context)
+        {
+        }
     }
 }
 

@@ -65,6 +65,12 @@ public class Tests
             {
                 stack.Push(i);
             }
-        }, Throws.TypeOf<CapacityExceededException>());        
+        }, Throws.TypeOf<CapacityExceededException>());
+    }
+
+    [Test]
+    public void PopOnAnEmptyStack()
+    {
+        Assert.That(() => stack.Pop(), Throws.TypeOf<EmptyStackException>());
     }
 }
