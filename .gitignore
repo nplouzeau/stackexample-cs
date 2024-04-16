@@ -406,3 +406,4 @@ ASALocalRun/
 
 # Coverage data
 lcov.info
+.vscode/settings.json
