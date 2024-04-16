@@ -35,7 +35,7 @@ namespace stackexample
         /// <summary>
         /// Adds a new value as the new top of the stack, if the stack is not full.
         /// </summary>
-        /// <param name="value">the value to be add</param>
+        /// <param name="value">the value to add</param>
         /// <exception cref="CapacityExceededException">Throw CapacityExceedException
         /// if the stack is full: IsFull() returns true
         /// </exception>
